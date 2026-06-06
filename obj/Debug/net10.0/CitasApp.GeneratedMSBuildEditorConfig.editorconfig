@@ -22,12 +22,24 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/Views/Citas/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2l0YXMvSW5kZXguY3NodG1s
+[/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/Views/Cita/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2l0YS9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/Views/Citas/PorPaciente.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2l0YXMvUG9yUGFjaWVudGUuY3NodG1s
+[/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/Views/Cita/Detalle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2l0YS9EZXRhbGxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/Views/Cita/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2l0YS9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/Views/Cita/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2l0YS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/Views/Cita/PorPaciente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2l0YS9Qb3JQYWNpZW50ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/Views/Home/Index.cshtml]
@@ -38,16 +50,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/Views/Medico/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVkaWNvL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/Views/Medico/Detalle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVkaWNvL0RldGFsbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/Views/Medico/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVkaWNvL0VkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/Views/Medico/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVkaWNvL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/Views/Paciente/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGFjaWVudGUvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/Views/Paciente/Detalle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGFjaWVudGUvRGV0YWxsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/Views/Paciente/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGFjaWVudGUvRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/Views/Paciente/Index.cshtml]
@@ -56,6 +84,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/Views/Shared/_ValidationScriptsPartial.cshtml]
@@ -69,7 +101,3 @@ build_metadata.AdditionalFiles.CssScope =
 [/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-aaxwjc83yz

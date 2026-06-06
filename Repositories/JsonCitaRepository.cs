@@ -52,7 +52,7 @@ namespace CitasApp.Repositories
             }
             catch
             {
-
+                // Manejo de error silencioso
             }
         }
 
@@ -84,7 +84,7 @@ namespace CitasApp.Repositories
             }
             catch
             {
-
+                // Manejo de error silencioso
             }
         }
 
@@ -105,7 +105,7 @@ namespace CitasApp.Repositories
             }
             catch
             {
-
+                // Manejo de error silencioso
             }
         }
     }

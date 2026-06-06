@@ -7,5 +7,6 @@ namespace CitasApp.Models
         public string Apellido { get; set; } = string.Empty;
         public string Especialidad { get; set; } = string.Empty;
         public string NumeroLicencia { get; set; } = string.Empty;
+
     }
 }

@@ -1,53 +1,138 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿@{
+    var currentController = (ViewContext.RouteData.Values["controller"]?.ToString() ?? "Home");
+    string NavClass(string controller)
+    {
+        return string.Equals(currentController, controller, StringComparison.OrdinalIgnoreCase)
+            ? "nav-link nav-pill active"
+            : "nav-link nav-pill";
+    }
+
+    var homeClass = NavClass("Home");
+    var citaClass = NavClass("Cita");
+    var pacienteClass = NavClass("Paciente");
+    var medicoClass = NavClass("Medico");
+    var currentYear = DateTime.Now.Year;
+}
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - CitasApp</title>
-    <script type="importmap"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/CitasApp.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CitasApp</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg navbar-light app-navbar">
+            <div class="container-xl app-shell">
+                <a class="navbar-brand app-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <span class="brand-mark">CA</span>
+                    <span class="brand-copy">
+                        <span class="brand-title">CitasApp</span>
+                        <span class="brand-subtitle">Gestión clínica</span>
+                    </span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="mainNavigation"
+                        aria-expanded="false" aria-label="Alternar navegación">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="navbar-collapse collapse" id="mainNavigation">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Paciente" asp-action="Index">Pacientes</a>
+                            <a class="@homeClass" asp-area="" asp-controller="Home" asp-action="Index">
+                                <svg class="nav-icon" aria-hidden="true"><use href="#icon-home"></use></svg>
+                                <span>Inicio</span>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Medico" asp-action="Index">Médicos</a>
+                            <a class="@citaClass" asp-area="" asp-controller="Cita" asp-action="Index">
+                                <svg class="nav-icon" aria-hidden="true"><use href="#icon-calendar"></use></svg>
+                                <span>Citas</span>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Cita" asp-action="Index">Agenda</a>
+                            <a class="@pacienteClass" asp-area="" asp-controller="Paciente" asp-action="Index">
+                                <svg class="nav-icon" aria-hidden="true"><use href="#icon-users"></use></svg>
+                                <span>Pacientes</span>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="@medicoClass" asp-area="" asp-controller="Medico" asp-action="Index">
+                                <svg class="nav-icon" aria-hidden="true"><use href="#icon-pulse"></use></svg>
+                                <span>Médicos</span>
+                            </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - CitasApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <svg class="app-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <symbol id="icon-home" viewBox="0 0 24 24">
+            <path d="M3 11.5 12 4l9 7.5" />
+            <path d="M5 10.5V21h14v-10.5" />
+            <path d="M10 21v-6h4v6" />
+        </symbol>
+        <symbol id="icon-calendar" viewBox="0 0 24 24">
+            <rect x="3" y="5" width="18" height="16" rx="3" />
+            <path d="M8 3v4M16 3v4M3 10h18" />
+        </symbol>
+        <symbol id="icon-users" viewBox="0 0 24 24">
+            <circle cx="9" cy="8" r="3" />
+            <path d="M3.5 20c.7-3.2 3-5 5.5-5s4.8 1.8 5.5 5" />
+            <circle cx="17" cy="9" r="2.5" />
+            <path d="M14.5 20c.4-1.9 1.8-3.4 3.5-4" />
+        </symbol>
+        <symbol id="icon-pulse" viewBox="0 0 24 24">
+            <path d="M3 12h4l2.2-5 3.1 10 2.2-5H21" />
+            <path d="M12 21c4.2-2.5 7.5-6 9-9.2" />
+        </symbol>
+        <symbol id="icon-plus" viewBox="0 0 24 24">
+            <path d="M12 5v14M5 12h14" />
+        </symbol>
+        <symbol id="icon-arrow-right" viewBox="0 0 24 24">
+            <path d="M5 12h14" />
+            <path d="m13 6 6 6-6 6" />
+        </symbol>
+        <symbol id="icon-shield" viewBox="0 0 24 24">
+            <path d="M12 3 19 6v6c0 4.8-3 8.5-7 11-4-2.5-7-6.2-7-11V6l7-3Z" />
+            <path d="m9.5 12 1.7 1.7 3.8-4" />
+        </symbol>
+        <symbol id="icon-spark" viewBox="0 0 24 24">
+            <path d="M12 3 13.8 9.2 20 11l-6.2 1.8L12 19l-1.8-6.2L4 11l6.2-1.8Z" />
+        </symbol>
+        <symbol id="icon-warning" viewBox="0 0 24 24">
+            <path d="M12 4 2.8 20h18.4L12 4Z" />
+            <path d="M12 9v4M12 17h.01" />
+        </symbol>
+        <symbol id="icon-check" viewBox="0 0 24 24">
+            <path d="m5 12 4 4 10-10" />
+        </symbol>
+        <symbol id="icon-clock" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="8.5" />
+            <path d="M12 8v4l3 2" />
+        </symbol>
+        <symbol id="icon-x" viewBox="0 0 24 24">
+            <path d="m6 6 12 12M18 6 6 18" />
+        </symbol>
+    </svg>
+
+    <div class="app-background"></div>
+
+    <main class="container-xl app-shell app-main">
+        @RenderBody()
+    </main>
+
+    <footer class="app-footer">
+        <div class="container-xl app-shell d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+            <p class="mb-0">&copy; @currentYear CitasApp</p>
+            <span class="footer-note">Agenda clínica con interfaz renovada</span>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

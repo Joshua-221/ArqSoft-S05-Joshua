@@ -14,7 +14,7 @@
     "MedicoId": 2,
     "Fecha": "2026-06-01",
     "Hora": "10:00:00",
-    "Motivo": "Revisi\u00F3n de resultados",
+    "Motivo": "Revisi\u00F3n de laboratorio",
     "Estado": "Pendiente"
   },
   {
@@ -23,7 +23,7 @@
     "MedicoId": 1,
     "Fecha": "2026-06-03",
     "Hora": "11:00:00",
-    "Motivo": "Primera consulta",
+    "Motivo": "Primera valoraci\u00F3n",
     "Estado": "Pendiente"
   },
   {
@@ -32,7 +32,7 @@
     "MedicoId": 4,
     "Fecha": "2026-06-03",
     "Hora": "12:00:00",
-    "Motivo": "Cirug\u00EDa",
+    "Motivo": "Control postoperatorio",
     "Estado": "Confirmada"
   },
   {
@@ -41,7 +41,7 @@
     "MedicoId": 5,
     "Fecha": "2026-06-03",
     "Hora": "09:30:00",
-    "Motivo": "Curar a charizard",
+    "Motivo": "Seguimiento pedi\u00E1trico",
     "Estado": "Pendiente"
   }
 ]

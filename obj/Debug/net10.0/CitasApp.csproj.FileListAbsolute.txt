@@ -18,10 +18,7 @@
 /Users/joshuacruz/RiderProjects/Citas_App/CitasApp/obj/Debug/net10.0/rjimswa.dswa.cache.json
 /Users/joshuacruz/RiderProjects/Citas_App/CitasApp/obj/Debug/net10.0/rjsmrazor.dswa.cache.json
 /Users/joshuacruz/RiderProjects/Citas_App/CitasApp/obj/Debug/net10.0/rjsmcshtml.dswa.cache.json
-/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/obj/Debug/net10.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
 /Users/joshuacruz/RiderProjects/Citas_App/CitasApp/obj/Debug/net10.0/scopedcss/bundle/CitasApp.styles.css
-/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/obj/Debug/net10.0/scopedcss/projectbundle/CitasApp.bundle.scp.css
-/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/obj/Debug/net10.0/compressed/fgxyf1uxgv-{0}-lugek5hnai-lugek5hnai.gz
 /Users/joshuacruz/RiderProjects/Citas_App/CitasApp/obj/Debug/net10.0/compressed/xh1fecoa3y-{0}-61n19gt1b8-61n19gt1b8.gz
 /Users/joshuacruz/RiderProjects/Citas_App/CitasApp/obj/Debug/net10.0/compressed/bujcvv2wj7-{0}-fr7q2aak1r-fr7q2aak1r.gz
 /Users/joshuacruz/RiderProjects/Citas_App/CitasApp/obj/Debug/net10.0/compressed/q5c6nj6b9e-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -83,8 +80,6 @@
 /Users/joshuacruz/RiderProjects/Citas_App/CitasApp/obj/Debug/net10.0/compressed/ut6ukyg7et-{0}-muycvpuwrr-muycvpuwrr.gz
 /Users/joshuacruz/RiderProjects/Citas_App/CitasApp/obj/Debug/net10.0/compressed/0rhrjh8r5e-{0}-87fc7y1x7t-87fc7y1x7t.gz
 /Users/joshuacruz/RiderProjects/Citas_App/CitasApp/obj/Debug/net10.0/compressed/3dqf94n67b-{0}-jfsiqqwiad-jfsiqqwiad.gz
-/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/obj/Debug/net10.0/compressed/yg95l8t0tl-{0}-r84gdumne0-r84gdumne0.gz
-/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/obj/Debug/net10.0/compressed/pu679a8p1l-{0}-r84gdumne0-r84gdumne0.gz
 /Users/joshuacruz/RiderProjects/Citas_App/CitasApp/obj/Debug/net10.0/staticwebassets.build.json
 /Users/joshuacruz/RiderProjects/Citas_App/CitasApp/obj/Debug/net10.0/staticwebassets.build.json.cache
 /Users/joshuacruz/RiderProjects/Citas_App/CitasApp/obj/Debug/net10.0/staticwebassets.development.json
@@ -96,3 +91,7 @@
 /Users/joshuacruz/RiderProjects/Citas_App/CitasApp/obj/Debug/net10.0/CitasApp.genruntimeconfig.cache
 /Users/joshuacruz/RiderProjects/Citas_App/CitasApp/obj/Debug/net10.0/ref/CitasApp.dll
 /Users/joshuacruz/RiderProjects/Citas_App/CitasApp/obj/Debug/net10.0/CitasApp.sourcelink.json
+/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/bin/Debug/net10.0/Data/Citas.json
+/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/bin/Debug/net10.0/Data/Medicos.json
+/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/bin/Debug/net10.0/Data/Pacientes.json
+/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/obj/Debug/net10.0/compressed/fgxyf1uxgv-{0}-ljtxpz3flt-ljtxpz3flt.gz

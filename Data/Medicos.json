@@ -2,36 +2,36 @@
   {
     "Id": 1,
     "Nombre": "Carlos",
-    "Apellido": "Reyes",
+    "Apellido": "Rivera",
     "Especialidad": "Medicina General",
-    "NumeroLicencia": "MG-10421"
+    "NumeroLicencia": "MG-24011"
   },
   {
     "Id": 2,
-    "Nombre": "Patricia",
-    "Apellido": "Vega",
+    "Nombre": "Laura",
+    "Apellido": "Ponce",
     "Especialidad": "Pediatr\u00EDa",
-    "NumeroLicencia": "PD-20835"
+    "NumeroLicencia": "PD-24012"
   },
   {
     "Id": 3,
-    "Nombre": "Roberto",
-    "Apellido": "S\u00E1nchez",
+    "Nombre": "Mart\u00EDn",
+    "Apellido": "Salas",
     "Especialidad": "Cardiolog\u00EDa",
-    "NumeroLicencia": "CA-30117"
+    "NumeroLicencia": "CA-24013"
   },
   {
     "Id": 4,
-    "Nombre": "Jorge",
-    "Apellido": "Pedrozo",
-    "Especialidad": "Fisicoqu\u00EDmica",
-    "NumeroLicencia": "FQ-90289"
+    "Nombre": "Elena",
+    "Apellido": "Campos",
+    "Especialidad": "Ginecolog\u00EDa",
+    "NumeroLicencia": "GI-24014"
   },
   {
     "Id": 5,
-    "Nombre": "Panchis",
-    "Apellido": "Alcocer",
-    "Especialidad": "Pok\u00E9mon",
-    "NumeroLicencia": "PO-230309"
+    "Nombre": "Andr\u00E9s",
+    "Apellido": "Fuentes",
+    "Especialidad": "Traumatolog\u00EDa",
+    "NumeroLicencia": "TR-24015"
   }
 ]
