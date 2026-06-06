@@ -95,3 +95,4 @@
 /Users/joshuacruz/RiderProjects/Citas_App/CitasApp/obj/Debug/net10.0/CitasApp.pdb
 /Users/joshuacruz/RiderProjects/Citas_App/CitasApp/obj/Debug/net10.0/CitasApp.genruntimeconfig.cache
 /Users/joshuacruz/RiderProjects/Citas_App/CitasApp/obj/Debug/net10.0/ref/CitasApp.dll
+/Users/joshuacruz/RiderProjects/Citas_App/CitasApp/obj/Debug/net10.0/CitasApp.sourcelink.json
