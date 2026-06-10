@@ -1,13 +1,16 @@
-using CitasApp.Interfaces;
-using CitasApp.Repositories;
+﻿using CitasApp.Domain.Interfaces;
+using CitasApp.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddControllers();
 
-builder.Services.AddScoped<IMedicoRepository, JsonMedicoRepository>();
-builder.Services.AddScoped<IPacienteRepository, JsonPacienteRepository>();
 builder.Services.AddScoped<ICitaRepository, JsonCitaRepository>();
+builder.Services.AddScoped<IMedicoRepository, JsonMedicoRepository>();
+// Implementación de un nuevo Port para comprobar la arquitectura hexagonal funciona.
+//builder.Services.AddScoped<IPacienteRepository, MemoriaPacienteRepository>();
+builder.Services.AddScoped<IPacienteRepository, JsonPacienteRepository>();
 
 var app = builder.Build();
 
@@ -23,8 +26,8 @@ app.UseAuthorization();
 app.MapStaticAssets();
 
 app.MapControllerRoute(
-        name: "default",
-        pattern: "{controller=Home}/{action=Index}/{id?}")
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
 
 app.Run();
