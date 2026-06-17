@@ -1,31 +1,725 @@
+/* ============================================================
+   CitasApp — sistema visual "Fichero clínico"
+   La interfaz reinterpreta el archivero físico de un consultorio:
+   pestañas de carpeta en la navegación, fichas índice en el
+   detalle de paciente/médico, y volantes de cita perforados
+   en la agenda. Solo presentación: ningún controlador, modelo
+   o repositorio fue modificado.
+   ============================================================ */
+
+:root {
+  /* Color */
+  --paper: #F2F5F2;
+  --surface: #FFFFFF;
+  --ink: #16261F;
+  --ink-soft: #5B6B63;
+  --teal: #0E6F63;
+  --teal-deep: #0A4F46;
+  --teal-wash: #E3EFEC;
+  --rust: #BD5B2E;
+  --rust-wash: #F5E6DC;
+  --rose: #A23B45;
+  --rose-wash: #F4E1E2;
+  --kraft: #E9DEC4;
+  --kraft-line: #D8C9A3;
+  --line: #DCE3DD;
+
+  /* Tipografía */
+  --font-display: "Newsreader", "Iowan Old Style", serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", monospace;
+
+  /* Ritmo */
+  --radius: 10px;
+  --container: 880px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+  font-size: 16px;
 }
 
 body {
-  margin-bottom: 60px;
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 0.4em;
+  letter-spacing: -0.01em;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+a {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--teal-deep);
+  text-decoration: underline;
+}
+
+a:focus-visible,
+button:focus-visible,
+.tab-nav__item:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+code, .mono {
+  font-family: var(--font-mono);
+}
+
+/* ------------------------------------------------------------
+   Encabezado / navegación en pestañas de carpeta
+   ------------------------------------------------------------ */
+
+.site-header {
+  background: var(--kraft);
+  border-bottom: 1px solid var(--kraft-line);
+}
+
+.site-header__inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 18px 24px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 14px;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.brand:hover {
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.brand__mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  background: var(--teal);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+}
+
+.tab-nav {
+  display: flex;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tab-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-nav__item {
+  display: inline-block;
+  padding: 9px 18px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  background: transparent;
+  border-radius: 8px 8px 0 0;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.tab-nav__item:hover {
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+}
+
+.tab-nav__item.is-active {
+  color: var(--ink);
+  background: var(--surface);
+  box-shadow: 0 -1px 0 var(--teal) inset, 0 3px 0 0 var(--teal) inset;
+  font-weight: 600;
+}
+
+/* ------------------------------------------------------------
+   Layout general
+   ------------------------------------------------------------ */
+
+.page {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+.eyebrow {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 10px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  margin-bottom: 22px;
+}
+
+.back-link:hover {
+  color: var(--teal-deep);
+}
+
+/* ------------------------------------------------------------
+   Hero (Home)
+   ------------------------------------------------------------ */
+
+.hero {
+  position: relative;
+  padding: 12px 0 36px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 40px;
+}
+
+.hero__pulse {
+  width: 100%;
+  max-width: 360px;
+  height: 36px;
+  margin-bottom: 18px;
+  color: var(--teal);
+  opacity: 0.75;
+}
+
+.hero__pulse path {
+  stroke-dasharray: 340;
+  stroke-dashoffset: 340;
+  animation: draw-pulse 1.6s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__pulse path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes draw-pulse {
+  to { stroke-dashoffset: 0; }
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4.5vw, 2.9rem);
+  font-style: italic;
+  font-weight: 500;
+  max-width: 16ch;
+  line-height: 1.1;
+}
+
+.hero p {
+  max-width: 46ch;
+  color: var(--ink-soft);
+  font-size: 1.04rem;
+  margin-top: 14px;
+}
+
+/* Carpetas de acceso en Home */
+
+.entry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 720px) {
+  .entry-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.entry-card {
+  display: block;
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 0 var(--radius) var(--radius) var(--radius);
+  padding: 22px 20px 20px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.entry-card::before {
+  content: attr(data-tab);
+  position: absolute;
+  top: -11px;
+  left: 18px;
+  background: var(--ink);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 3px 9px;
+  border-radius: 4px 4px 0 0;
+}
+
+.entry-card:hover {
+  text-decoration: none;
+  transform: translateY(-2px);
+  border-color: var(--teal);
+  box-shadow: 0 10px 24px -16px rgba(14, 111, 99, 0.45);
+}
+
+.entry-card h2 {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 6px;
+}
+
+.entry-card p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.entry-card span.go {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--teal);
+}
+
+/* ------------------------------------------------------------
+   Roster — listas de Pacientes / Médicos
+   ------------------------------------------------------------ */
+
+.panel-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.panel-title h1 {
+  font-size: 1.7rem;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.count-chip {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  background: var(--teal-wash);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.roster {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.roster__row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--line);
+  border-left: 3px solid transparent;
+  transition: background-color 0.15s ease, border-left-color 0.15s ease;
+}
+
+.roster__row:last-child {
+  border-bottom: none;
+}
+
+.roster__row:hover {
+  background: var(--teal-wash);
+  border-left-color: var(--teal);
+}
+
+.roster__avatar {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.roster__main {
+  flex: 1;
+  min-width: 0;
+}
+
+.roster__name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.roster__meta {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  margin-top: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--teal-deep);
+  background: var(--teal-wash);
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-right: 8px;
+}
+
+.roster__action {
+  flex-shrink: 0;
+  font-size: 0.86rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------
+   Ficha — detalle de Paciente / Médico
+   ------------------------------------------------------------ */
+
+.filecard {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 0 var(--radius) var(--radius) var(--radius);
+  padding: 30px 30px 26px;
+  max-width: 540px;
+}
+
+.filecard__tab {
+  position: absolute;
+  top: -13px;
+  left: 24px;
+  background: var(--kraft);
+  border: 1px solid var(--kraft-line);
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 5px 5px 0 0;
+  border-bottom: none;
+}
+
+.filecard h1 {
+  font-size: 1.9rem;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.filecard__divider {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 18px 0 16px;
+}
+
+.filecard__row {
+  display: flex;
+  gap: 16px;
+  padding: 9px 0;
+  border-bottom: 1px dashed var(--line);
+}
+
+.filecard__row:last-of-type {
+  border-bottom: none;
+}
+
+.filecard__label {
+  flex: 0 0 130px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  padding-top: 2px;
+}
+
+.filecard__value {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.filecard__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border-radius: 7px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  background: var(--surface);
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+
+.btn:hover {
+  text-decoration: none;
+  border-color: var(--teal);
+  color: var(--teal-deep);
+}
+
+.btn--primary {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background: var(--teal-deep);
+  border-color: var(--teal-deep);
+  color: #fff;
+}
+
+/* ------------------------------------------------------------
+   Agenda — volantes de cita perforados
+   ------------------------------------------------------------ */
+
+.agenda__group {
+  margin-bottom: 30px;
+}
+
+.agenda__date {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.agenda__date strong {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.agenda__date span {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+}
+
+.agenda__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.agenda__item {
+  display: flex;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.agenda__time {
+  flex: 0 0 92px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink);
+  padding: 16px 8px;
+}
+
+.agenda__divider {
+  flex: 0 0 1px;
+  align-self: stretch;
+  background-image: radial-gradient(circle, var(--paper) 3px, var(--line) 3.5px, var(--line) 4px, transparent 4px);
+  background-size: 100% 16px;
+  background-position: top;
+  width: 1px;
+}
+
+.agenda__content {
+  flex: 1;
+  padding: 14px 18px;
+  min-width: 0;
+}
+
+.agenda__motivo {
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 0.98rem;
+}
+
+.agenda__meta {
+  font-size: 0.84rem;
+  color: var(--ink-soft);
+  margin-top: 3px;
+}
+
+.agenda__status {
+  flex: 0 0 auto;
+  padding: 0 18px;
+}
+
+.pill {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 5px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.pill--confirmada {
+  background: var(--teal-wash);
+  color: var(--teal-deep);
+}
+
+.pill--pendiente {
+  background: var(--rust-wash);
+  color: var(--rust);
+}
+
+.pill--cancelada {
+  background: var(--rose-wash);
+  color: var(--rose);
+}
+
+.pill--otro {
+  background: var(--line);
+  color: var(--ink-soft);
+}
+
+@media (max-width: 600px) {
+  .agenda__item {
+    align-items: stretch;
+  }
+  .agenda__time {
+    flex-basis: 72px;
+    font-size: 0.92rem;
+  }
+  .agenda__status {
+    padding: 0 12px;
+  }
+}
+
+/* ------------------------------------------------------------
+   Estado vacío
+   ------------------------------------------------------------ */
+
+.empty-state {
+  background: var(--surface);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  text-align: center;
+  color: var(--ink-soft);
+}
+
+.empty-state strong {
+  display: block;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+}
+
+/* ------------------------------------------------------------
+   Pie de página
+   ------------------------------------------------------------ */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 22px 24px;
+}
+
+.site-footer__inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+.site-footer a {
+  color: var(--ink-soft);
+}
+
+.site-footer a:hover {
+  color: var(--teal-deep);
 }

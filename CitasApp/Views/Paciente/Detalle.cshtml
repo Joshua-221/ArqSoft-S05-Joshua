@@ -1,0 +1,24 @@
+@model CitasApp.Models.Paciente
+@{
+    ViewData["Title"] = $"{Model.Nombre} {Model.Apellido}";
+}
+
+<a class="back-link" asp-action="Index">← Volver a la lista</a>
+
+<div class="filecard">
+    <span class="filecard__tab">Ficha de paciente N.º @Model.Id.ToString("D4")</span>
+    <h1>@Model.Nombre @Model.Apellido</h1>
+    <hr class="filecard__divider" />
+    <div class="filecard__row">
+        <span class="filecard__label">Email</span>
+        <span class="filecard__value">@Model.Email</span>
+    </div>
+    <div class="filecard__row">
+        <span class="filecard__label">Teléfono</span>
+        <span class="filecard__value">@Model.Telefono</span>
+    </div>
+    <div class="filecard__actions">
+        <a class="btn btn--primary" asp-controller="Cita" asp-action="PorPaciente" asp-route-pacienteId="@Model.Id">Ver sus citas</a>
+        <a class="btn" asp-action="Index">Volver a la lista</a>
+    </div>
+</div>
