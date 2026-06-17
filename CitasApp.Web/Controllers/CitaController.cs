@@ -5,31 +5,31 @@ namespace CitasApp.Controllers
 {
     public class CitaController : Controller
     {
-        private readonly ICitaRepository _citaRepo;
-        private readonly IPacienteRepository _pacienteRepo;
-        private readonly IMedicoRepository _medicoRepo;
+        private readonly ICitaService _citaService;
+        private readonly IPacienteService _pacienteService;
+        private readonly IMedicoService _medicoService;
 
-        public CitaController(ICitaRepository citaRepo,
-            IPacienteRepository pacienteRepo,
-            IMedicoRepository medicoRepo)
+        public CitaController(ICitaService citaService,
+            IPacienteService pacienteService,
+            IMedicoService medicoService)
         {
-            _citaRepo = citaRepo;
-            _pacienteRepo = pacienteRepo;
-            _medicoRepo = medicoRepo;
+            _citaService = citaService;
+            _pacienteService = pacienteService;
+            _medicoService = medicoService;
         }
 
         public IActionResult Index()
         {
-            ViewBag.Pacientes = _pacienteRepo.ObtenerTodos();
-            ViewBag.Medicos = _medicoRepo.ObtenerTodos();
-            return View(_citaRepo.ObtenerTodos());
+            ViewBag.Pacientes = _pacienteService.ObtenerTodos();
+            ViewBag.Medicos = _medicoService.ObtenerTodos();
+            return View(_citaService.ObtenerTodos());
         }
 
         public IActionResult PorPaciente(int pacienteId)
         {
-            ViewBag.Pacientes = _pacienteRepo.ObtenerTodos();
-            ViewBag.Medicos = _medicoRepo.ObtenerTodos();
-            return View(_citaRepo.ObtenerPorPaciente(pacienteId));
+            ViewBag.Pacientes = _pacienteService.ObtenerTodos();
+            ViewBag.Medicos = _medicoService.ObtenerTodos();
+            return View(_citaService.ObtenerPorPaciente(pacienteId));
         }
     }
 }

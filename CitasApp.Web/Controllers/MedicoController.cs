@@ -5,14 +5,14 @@ namespace CitasApp.Controllers
 {
     public class MedicoController : Controller
     {
-        private readonly IMedicoRepository _repo;
-        public MedicoController(IMedicoRepository repo) { _repo = repo; }
+        private readonly IMedicoService _service;
+        public MedicoController(IMedicoService service) { _service = service; }
 
-        public IActionResult Index() => View(_repo.ObtenerTodos());
+        public IActionResult Index() => View(_service.ObtenerTodos());
 
         public IActionResult Detalle(int id)
         {
-            var medico = _repo.ObtenerPorId(id);
+            var medico = _service.ObtenerPorId(id);
             return medico == null ? NotFound() : View(medico);
         }
     }

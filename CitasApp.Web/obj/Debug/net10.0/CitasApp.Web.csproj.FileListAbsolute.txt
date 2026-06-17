@@ -100,8 +100,6 @@
 /Users/joshuacruz/RiderProjects/CitasApp/CitasApp.Web/obj/Debug/net10.0/compressed/6xg9z82zm4-{0}-muycvpuwrr-muycvpuwrr.gz
 /Users/joshuacruz/RiderProjects/CitasApp/CitasApp.Web/obj/Debug/net10.0/compressed/wcjlujgw6h-{0}-87fc7y1x7t-87fc7y1x7t.gz
 /Users/joshuacruz/RiderProjects/CitasApp/CitasApp.Web/obj/Debug/net10.0/compressed/iqqo1iy5tu-{0}-jfsiqqwiad-jfsiqqwiad.gz
-/Users/joshuacruz/RiderProjects/CitasApp/CitasApp.Web/obj/Debug/net10.0/compressed/im4yp8vtz1-{0}-r84gdumne0-r84gdumne0.gz
-/Users/joshuacruz/RiderProjects/CitasApp/CitasApp.Web/obj/Debug/net10.0/compressed/nnkg7rmd7y-{0}-r84gdumne0-r84gdumne0.gz
 /Users/joshuacruz/RiderProjects/CitasApp/CitasApp.Web/obj/Debug/net10.0/staticwebassets.build.json
 /Users/joshuacruz/RiderProjects/CitasApp/CitasApp.Web/obj/Debug/net10.0/staticwebassets.build.json.cache
 /Users/joshuacruz/RiderProjects/CitasApp/CitasApp.Web/obj/Debug/net10.0/staticwebassets.development.json
@@ -113,3 +111,5 @@
 /Users/joshuacruz/RiderProjects/CitasApp/CitasApp.Web/obj/Debug/net10.0/CitasApp.Web.pdb
 /Users/joshuacruz/RiderProjects/CitasApp/CitasApp.Web/obj/Debug/net10.0/CitasApp.Web.genruntimeconfig.cache
 /Users/joshuacruz/RiderProjects/CitasApp/CitasApp.Web/obj/Debug/net10.0/ref/CitasApp.Web.dll
+/Users/joshuacruz/RiderProjects/CitasApp/CitasApp.Web/obj/Debug/net10.0/compressed/im4yp8vtz1-{0}-ypbhed6wj4-ypbhed6wj4.gz
+/Users/joshuacruz/RiderProjects/CitasApp/CitasApp.Web/obj/Debug/net10.0/compressed/nnkg7rmd7y-{0}-ypbhed6wj4-ypbhed6wj4.gz
