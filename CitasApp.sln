@@ -1,6 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitasApp", "CitasApp\CitasApp.csproj", "{993FBEAA-568A-4DB4-AD7E-6E99841633FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitasApp.Web", "CitasApp.Web\CitasApp.Web.csproj", "{993FBEAA-568A-4DB4-AD7E-6E99841633FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitasApp.Domain", "CitasApp.Domain\CitasApp.Domain.csproj", "{918E233E-BC14-415C-A2CA-BEDCFC279A7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitasApp.Infrastructure", "CitasApp.Infrastructure\CitasApp.Infrastructure.csproj", "{165BB544-546B-4D82-82FF-D3B292F6D74D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +16,13 @@ Global
 		{993FBEAA-568A-4DB4-AD7E-6E99841633FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{993FBEAA-568A-4DB4-AD7E-6E99841633FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{993FBEAA-568A-4DB4-AD7E-6E99841633FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{918E233E-BC14-415C-A2CA-BEDCFC279A7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{918E233E-BC14-415C-A2CA-BEDCFC279A7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{918E233E-BC14-415C-A2CA-BEDCFC279A7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{918E233E-BC14-415C-A2CA-BEDCFC279A7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{165BB544-546B-4D82-82FF-D3B292F6D74D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{165BB544-546B-4D82-82FF-D3B292F6D74D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{165BB544-546B-4D82-82FF-D3B292F6D74D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{165BB544-546B-4D82-82FF-D3B292F6D74D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

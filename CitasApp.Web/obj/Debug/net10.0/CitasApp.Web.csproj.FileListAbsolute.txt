@@ -1,0 +1,9 @@
+/Users/joshuacruz/RiderProjects/CitasApp/CitasApp.Web/obj/Debug/net10.0/rpswa.dswa.cache.json
+/Users/joshuacruz/RiderProjects/CitasApp/CitasApp.Web/obj/Debug/net10.0/CitasApp.Web.GeneratedMSBuildEditorConfig.editorconfig
+/Users/joshuacruz/RiderProjects/CitasApp/CitasApp.Web/obj/Debug/net10.0/CitasApp.Web.AssemblyInfoInputs.cache
+/Users/joshuacruz/RiderProjects/CitasApp/CitasApp.Web/obj/Debug/net10.0/CitasApp.Web.AssemblyInfo.cs
+/Users/joshuacruz/RiderProjects/CitasApp/CitasApp.Web/obj/Debug/net10.0/CitasApp.Web.csproj.CoreCompileInputs.cache
+/Users/joshuacruz/RiderProjects/CitasApp/CitasApp.Web/obj/Debug/net10.0/CitasApp.Web.MvcApplicationPartsAssemblyInfo.cache
+/Users/joshuacruz/RiderProjects/CitasApp/CitasApp.Web/obj/Debug/net10.0/CitasApp.Web.RazorAssemblyInfo.cache
+/Users/joshuacruz/RiderProjects/CitasApp/CitasApp.Web/obj/Debug/net10.0/CitasApp.Web.RazorAssemblyInfo.cs
+/Users/joshuacruz/RiderProjects/CitasApp/CitasApp.Web/obj/Debug/net10.0/CitasApp.Web.sourcelink.json
