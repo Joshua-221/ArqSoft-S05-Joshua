@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitasApp.Infrastructure", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitasApp.Application", "CitasApp.Application\CitasApp.Application.csproj", "{9C8175D7-64D6-4B9B-9507-B357C6392B6B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitasApp.Api", "CitasApp.Api\CitasApp.Api.csproj", "{2A80FC8C-F060-48D5-94C6-108D651C1042}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{9C8175D7-64D6-4B9B-9507-B357C6392B6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C8175D7-64D6-4B9B-9507-B357C6392B6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C8175D7-64D6-4B9B-9507-B357C6392B6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A80FC8C-F060-48D5-94C6-108D651C1042}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A80FC8C-F060-48D5-94C6-108D651C1042}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A80FC8C-F060-48D5-94C6-108D651C1042}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A80FC8C-F060-48D5-94C6-108D651C1042}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

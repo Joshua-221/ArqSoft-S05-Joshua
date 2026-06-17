@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CitasApp.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6eae3fc255a126d48757c28b906781c6adb70d9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5e0b826c596d78943159832893763fd312952ff")]
 [assembly: System.Reflection.AssemblyProductAttribute("CitasApp.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CitasApp.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
