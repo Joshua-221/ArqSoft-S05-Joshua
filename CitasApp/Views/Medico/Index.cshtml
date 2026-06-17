@@ -1,17 +1,36 @@
 @model List<CitasApp.Models.Medico>
-<h1>Médicos disponibles</h1>
-<table border="1" cellpadding="8">
-    <tr>
-        <th>Nombre</th>
-        <th>Especialidad</th>
-        <th></th>
-    </tr>
-    @foreach (var m in Model)
-    {
-        <tr>
-            <td>@m.Nombre @m.Apellido</td>
-            <td>@m.Especialidad</td>
-            <td><a asp-action="Detalle" asp-route-id="@m.Id">Ver detalle</a></td>
-        </tr>
-    }
-</table>
+@{
+    ViewData["Title"] = "Médicos";
+}
+@functions {
+    string Inicial(string s) => string.IsNullOrEmpty(s) ? "" : s.Substring(0, 1).ToUpper();
+}
+
+<div class="panel-title">
+    <h1>Médicos disponibles</h1>
+    <span class="count-chip">@Model.Count en total</span>
+</div>
+
+@if (!Model.Any())
+{
+    <div class="empty-state">
+        <strong>Aún no hay médicos</strong>
+        Cuando se registre uno, aparecerá aquí.
+    </div>
+}
+else
+{
+    <div class="roster">
+        @foreach (var m in Model)
+        {
+            <div class="roster__row">
+                <div class="roster__avatar">@Inicial(m.Nombre)@Inicial(m.Apellido)</div>
+                <div class="roster__main">
+                    <div class="roster__name">@m.Nombre @m.Apellido</div>
+                    <div class="roster__meta"><span class="tag">@m.Especialidad</span>@m.NumeroLicencia</div>
+                </div>
+                <a class="roster__action" asp-action="Detalle" asp-route-id="@m.Id">Ver expediente →</a>
+            </div>
+        }
+    </div>
+}
