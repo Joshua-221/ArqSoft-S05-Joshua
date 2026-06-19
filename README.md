@@ -55,8 +55,8 @@ La API estará disponible en: `http://localhost:5000`
 
 > Agrega aquí capturas de la API corriendo (por ejemplo desde el navegador o Postman)
 
-![CAPTURAS]()
-![CAPTURAS]()
+![CAPTURAS](captura-01.png)
+![CAPTURAS](captura-02.png)
 
 ---
 
