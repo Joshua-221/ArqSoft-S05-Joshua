@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CitasApp.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5e0b826c596d78943159832893763fd312952ff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2fcb9f04b6a5514f706da0d4c2f3ca1c573ac53d")]
 [assembly: System.Reflection.AssemblyProductAttribute("CitasApp.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CitasApp.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -13,11 +13,11 @@ builder.WebHost.ConfigureKestrel(options =>
 // En producción ajustar esta política a orígenes permitidos.
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll", policy =>
+    options.AddPolicy("PermitirFrontendLocal", policy =>
     {
-        policy.AllowAnyOrigin()
-              .AllowAnyHeader()
-              .AllowAnyMethod();
+        policy.AllowAnyOrigin()  // Permite cualquier origen (ideal para desarrollo)
+              .AllowAnyMethod()  // Permite cualquier método (GET, POST, etc.)
+              .AllowAnyHeader(); // Permite cualquier cabecera
     });
 });
 
@@ -34,7 +34,7 @@ builder.Services.AddScoped<ICitaService, CitaService>();
 var app = builder.Build();
 
 // Usar CORS antes de mapear controllers
-app.UseCors("AllowAll");
+app.UseCors("PermitirFrontendLocal");
 // NOTA: No forzar redirección a HTTPS aquí para mantener el puerto HTTP 5000 accesible en desarrollo.
 app.UseAuthorization();
 app.MapControllers();
