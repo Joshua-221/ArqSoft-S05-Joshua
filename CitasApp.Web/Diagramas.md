@@ -1,5 +1,8 @@
+# Diagrama de Arquitectura de CitasApp
+
+```mermaid
 classDiagram
-direction LR
+    direction LR
 
     %% Controladores
     class PacientesController {
